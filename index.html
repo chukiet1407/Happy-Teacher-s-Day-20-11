@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thiệp 20/11 - Chúc mừng Ngày Nhà Giáo</title>
+  <style>
+    :root{--bg:#3b2f33;--card:#ffeef0;--accent:#d95d7b}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background: pink;font-family:Inter, Poppins, system-ui, sans-serif;color:#222}
+    .stage{position:relative;width:min(920px,92vw);height:min(700px,78vh);display:flex;align-items:center;justify-content:center}
+
+    .heart-svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:95%;height:95%;pointer-events:none}
+
+    .card{position:relative;z-index:2;width:66%;max-width:520px;padding:28px 30px;border-radius:18px;background:var(--card);box-shadow:0 10px 30px rgba(0,0,0,0.45);transform:rotate(-6deg)}
+    .card h2{margin:0 0 12px;font-size:1.6rem;color:var(--accent);letter-spacing:0.6px}
+    .card .meta{color:#3b2b30;margin-bottom:8px}
+    .card p{margin:8px 0;color:#3b2b30;line-height:1.45}
+    .card .center{text-align:center;margin-top:12px;font-weight:700}
+
+    .paper-behind{position:absolute;z-index:1;width:62%;max-width:500px;height:72%;background:white;border-radius:16px;transform:translate(-6%,4%) rotate(8deg);box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+
+    .float-heart{position:absolute;font-size:22px;opacity:0.95;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.25));z-index:3;animation:floatUp linear infinite}
+    @keyframes floatUp{0%{transform:translateY(0) scale(0.9);opacity:1}100%{transform:translateY(-220px) scale(1.4);opacity:0}}
+
+    /* Typewriter styles */
+    .type-wrap{display:block;position:relative}
+    .cursor{display:inline-block;width:2px;background:#3b2b30;margin-left:6px;animation:blink 0.7s step-end infinite;height:1.05em;vertical-align:middle}
+    @keyframes blink{50%{opacity:0}}
+
+    @media (prefers-reduced-motion: reduce){
+      .float-heart{display:none}
+      .cursor{display:none}
+    }
+
+    @media (max-width:640px){.card{width:84%;padding:20px;border-radius:14px}.paper-behind{display:none}}
+
+    /* floating hearts & books */
+    .floating { position:absolute; animation:floatUp 6s linear infinite; opacity:0.8; font-size:26px; pointer-events:none;}
+    .heart { color:#ff699e; }
+    .book { }
+    .h1 { left:10%; animation-delay:0s; }
+    .h2 { left:50%; animation-delay:1.5s; }
+    .h3 { left:80%; animation-delay:3s; }
+    .b1 { left:20%; animation-delay:0.7s; }
+    .b2 { left:60%; animation-delay:2.3s; }
+    .b3 { left:75%; animation-delay:4s; }
+    @keyframes floatUp { 0% { transform: translateY(40px) scale(1); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-500px) scale(1.4); opacity: 0; } }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="paper-behind" aria-hidden="true"></div>
+
+    <article class="card" aria-label="Thiệp chúc mừng">
+      <h2><span id="heading"></span><span class="cursor" id="cursor-h"></span></h2>
+
+      <!-- paragraphs will be typed sequentially -->
+      <p class="type-wrap"><span id="p1"></span><span class="cursor" id="c1"></span></p>
+      <p class="type-wrap"><span id="p2"></span><span class="cursor" id="c2"></span></p>
+      <p class="type-wrap"><span id="p3"></span><span class="cursor" id="c3"></span></p>
+      <p class="type-wrap"><span id="p4"></span><span class="cursor" id="c4"></span></p>
+      <p class="center type-wrap"><span id="p5"></span><span class="cursor" id="c5"></span></p>
+      <p class="center type-wrap"><span id="p6"></span><span class="cursor" id="c6"></span></p>
+    </article>
+
+    <svg class="heart-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hình trái tim">
+      <defs>
+        <path id="heartPath" d="M300 520 C 150 420, 40 300, 150 200 C 230 130, 320 170, 300 230 C 280 170, 370 130, 450 200 C 560 300, 450 420, 300 520 Z" />
+        <path id="topArc" d="M150 210 C 220 120, 380 120, 450 210" fill="none" />
+      </defs>
+      <use href="#heartPath" fill="rgba(255,235,238,0.12)" stroke="rgba(255,255,255,0.06)" stroke-width="2" />
+      <use href="#heartPath" fill="none" stroke="rgba(255,100,150,0.22)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+      <text font-size="20" font-family="Poppins, Inter, sans-serif" text-anchor="middle" fill="#ffdce4">
+        <textPath href="#topArc" startOffset="50%">Chúc mừng Ngày Nhà giáo Việt Nam 20/11</textPath>
+      </text>
+    </svg>
+  </div>
+
+  <!-- floating hearts & books -->
+  <div class="floating heart h1">❤️</div>
+  <div class="floating heart h2">💖</div>
+  <div class="floating heart h3">💕</div>
+  <div class="floating book b1">📘</div>
+  <div class="floating book b2">📕</div>
+  <div class="floating book b3">📗</div>
+
+  <script>
+    const content = {
+      heading: 'Kính gửi Thầy Cô!',
+      p1: 'Hôm nay là ngày 20/11, ngày đặc biệt để chúng em gửi lời tri ân đến thầy cô – những người tận tâm dìu dắt chúng em trên con đường tri thức.',
+      p2: 'Cảm ơn thầy cô vì những bài học, những lời khuyên và cả những quan tâm giản dị mỗi ngày.',
+      p3: 'Chúc thầy cô luôn vui vẻ, mạnh khỏe và thật hạnh phúc bên học trò thân yêu của mình.',
+      p4: 'Thầy cô là ngọn đèn soi sáng, là người truyền cảm hứng cho chúng em cố gắng từng ngày.',
+      p5: '❤️ Chúc mừng Ngày Nhà giáo Việt Nam 20/11 ❤️',
+      p6: 'Tập thể lớp 12a2 THPT Cát Tiên kính tặng thầy cô'
+    };
+
+    const cfg = {charDelay:30, paragraphDelay:500};
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if(prefersReduced){
+      Object.keys(content).forEach(id => document.getElementById(id).innerText = content[id]);
+    } else {
+      function typeInto(el,text,delay){
+        return new Promise(resolve=>{
+          let i=0;
+          function step(){ if(i<=text.length){ el.innerText=text.slice(0,i); i++; setTimeout(step,delay); } else resolve(); }
+          step();
+        });
+      }
+
+      (async function(){
+        const ids=['heading','p1','p2','p3','p4','p5','p6'];
+        for(let k=0;k<ids.length;k++){
+          const el=document.getElementById(ids[k]);
+          const cursor=document.getElementById((k===0)?'cursor-h':'c'+k);
+          if(cursor) cursor.style.visibility='visible';
+          await typeInto(el,content[ids[k]],cfg.charDelay);
+          if(cursor){ await new Promise(r=>setTimeout(r,120)); cursor.style.visibility='hidden'; }
+          if(k>0) await new Promise(r=>setTimeout(r,cfg.paragraphDelay));
+        }
+      })();
+    }
+
+    const colors=['#ff6b81','#ff9aa2','#ff4d6d','#ffd1dc'];
+    function spawn(){
+      const el=document.createElement('div');
+      el.className='float-heart';
+      el.innerText='💐';
+      el.style.left=(30+Math.random()*40)+'%';
+      el.style.bottom=(10+Math.random()*6)+'%';
+      el.style.fontSize=(12+Math.random()*24)+'px';
+      el.style.opacity=0.9;
+      el.style.color=colors[Math.floor(Math.random()*colors.length)];
+      el.style.animationDuration=(3+Math.random()*3)+'s';
+      document.body.appendChild(el);
+      setTimeout(()=>el.remove(),7000);
+    }
+    if(!prefersReduced) setInterval(spawn,520);
+  </script>
+</body>
+</html>
