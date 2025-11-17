@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Thiệp 20/11 - Chúc mừng Ngày Nhà Giáo</title>
   <style>
-    :root{--bg:#3b2f33;--card:#ffeef0;--accent:#d95d7b}
+    :root{--bg:#ffc0d3;--card:#fff4f6;--accent:#d95d7b}
     *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background: pink;font-family:Inter, Poppins, system-ui, sans-serif;color:#222}
-    .stage{position:relative;width:min(920px,92vw);height:min(700px,78vh);display:flex;align-items:center;justify-content:center}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);font-family:Inter, Poppins, system-ui, sans-serif;color:#222}
+    .stage{position:relative;width:min(960px,96vw);height:min(780px,86vh);display:flex;align-items:center;justify-content:center}
 
     .heart-svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:95%;height:95%;pointer-events:none}
 
-    .card{position:relative;z-index:2;width:66%;max-width:520px;padding:28px 30px;border-radius:18px;background:var(--card);box-shadow:0 10px 30px rgba(0,0,0,0.45);transform:rotate(-6deg)}
+    .card{position:relative;z-index:2;width:66%;max-width:560px;padding:28px 30px;border-radius:18px;background:var(--card);box-shadow:0 12px 36px rgba(0,0,0,0.12);transform:rotate(-6deg)}
     .card h2{margin:0 0 12px;font-size:1.6rem;color:var(--accent);letter-spacing:0.6px}
-    .card .meta{color:#3b2b30;margin-bottom:8px}
+    .meta{color:#3b2b30;margin-bottom:8px}
     .card p{margin:8px 0;color:#3b2b30;line-height:1.45}
     .card .center{text-align:center;margin-top:12px;font-weight:700}
 
-    .paper-behind{position:absolute;z-index:1;width:62%;max-width:500px;height:72%;background:white;border-radius:16px;transform:translate(-6%,4%) rotate(8deg);box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+    .paper-behind{position:absolute;z-index:1;width:62%;max-width:500px;height:72%;background:white;border-radius:16px;transform:translate(-6%,4%) rotate(8deg);box-shadow:0 6px 20px rgba(0,0,0,0.18)}
 
-    .float-heart{position:absolute;font-size:22px;opacity:0.95;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.25));z-index:3;animation:floatUp linear infinite}
+    .float-heart{position:absolute;font-size:22px;opacity:0.95;filter:drop-shadow(0 3px 6px rgba(0,0,0,0.12));z-index:3;animation:floatUp linear infinite}
     @keyframes floatUp{0%{transform:translateY(0) scale(0.9);opacity:1}100%{transform:translateY(-220px) scale(1.4);opacity:0}}
 
     /* Typewriter styles */
@@ -28,24 +28,29 @@
     .cursor{display:inline-block;width:2px;background:#3b2b30;margin-left:6px;animation:blink 0.7s step-end infinite;height:1.05em;vertical-align:middle}
     @keyframes blink{50%{opacity:0}}
 
-    @media (prefers-reduced-motion: reduce){
-      .float-heart{display:none}
-      .cursor{display:none}
-    }
+    /* controls */
+    .controls{display:flex;gap:8px;align-items:center;margin-top:12px}
+    select, button{padding:8px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);background:white}
+    button{cursor:pointer}
 
-    @media (max-width:640px){.card{width:84%;padding:20px;border-radius:14px}.paper-behind{display:none}}
+    /* list all modal */
+    .modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:white;padding:18px;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.2);max-width:720px;width:86%;max-height:78vh;overflow:auto;z-index:999;display:none}
+    .modal h3{margin-top:0}
+    .modal .close{float:right;cursor:pointer}
 
-    /* floating hearts & books */
-    .floating { position:absolute; animation:floatUp 6s linear infinite; opacity:0.8; font-size:26px; pointer-events:none;}
-    .heart { color:#ff699e; }
-    .book { }
-    .h1 { left:10%; animation-delay:0s; }
-    .h2 { left:50%; animation-delay:1.5s; }
-    .h3 { left:80%; animation-delay:3s; }
-    .b1 { left:20%; animation-delay:0.7s; }
-    .b2 { left:60%; animation-delay:2.3s; }
-    .b3 { left:75%; animation-delay:4s; }
-    @keyframes floatUp { 0% { transform: translateY(40px) scale(1); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-500px) scale(1.4); opacity: 0; } }
+    /* floating icons (hearts/books) */
+    .floating{position:absolute;animation:floatUp 6s linear infinite;opacity:0.9;font-size:26px;pointer-events:none}
+    .h1{left:8%;bottom:6%;animation-delay:0s}
+    .h2{left:48%;bottom:4%;animation-delay:1.2s}
+    .h3{left:82%;bottom:8%;animation-delay:2.4s}
+    .b1{left:18%;bottom:16%;animation-delay:0.6s}
+    .b2{left:64%;bottom:14%;animation-delay:1.9s}
+    .b3{left:74%;bottom:22%;animation-delay:3.1s}
+
+    @media (prefers-reduced-motion: reduce){.float-heart,.floating{display:none}.cursor{display:none}}
+    @media (max-width:640px){.card{width:86%;padding:18px}.paper-behind{display:none}}
+
+    .footer-note{margin-top:10px;text-align:center;font-size:0.95rem;color:#5a4a50}
   </style>
 </head>
 <body>
@@ -55,89 +60,208 @@
     <article class="card" aria-label="Thiệp chúc mừng">
       <h2><span id="heading"></span><span class="cursor" id="cursor-h"></span></h2>
 
-      <!-- paragraphs will be typed sequentially -->
-      <p class="type-wrap"><span id="p1"></span><span class="cursor" id="c1"></span></p>
-      <p class="type-wrap"><span id="p2"></span><span class="cursor" id="c2"></span></p>
-      <p class="type-wrap"><span id="p3"></span><span class="cursor" id="c3"></span></p>
-      <p class="type-wrap"><span id="p4"></span><span class="cursor" id="c4"></span></p>
-      <p class="center type-wrap"><span id="p5"></span><span class="cursor" id="c5"></span></p>
-      <p class="center type-wrap"><span id="p6"></span><span class="cursor" id="c6"></span></p>
+      <div id="messageArea">
+        <p class="type-wrap"><span id="p1"></span><span class="cursor" id="c1"></span></p>
+        <p class="type-wrap"><span id="p2"></span><span class="cursor" id="c2"></span></p>
+        <p class="type-wrap"><span id="p3"></span><span class="cursor" id="c3"></span></p>
+        <p class="type-wrap"><span id="p4"></span><span class="cursor" id="c4"></span></p>
+        <p class="center type-wrap"><span id="p5"></span><span class="cursor" id="c5"></span></p>
+      </div>
+
+      <div class="controls">
+        <label for="pick">Chọn lời chúc:</label>
+        <select id="pick"></select>
+        <button id="randomBtn">Quay 1 câu ngẫu nhiên</button>
+        <button id="showAllBtn">Xem tất cả lời chúc</button>
+      </div>
+
+      <div class="footer-note">
+        <small>Tập thể lớp 12a2 THPT Cát Tiên kính tặng thầy cô</small>
+      </div>
     </article>
 
+    <!-- Heart SVG with top arc text -->
     <svg class="heart-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hình trái tim">
       <defs>
         <path id="heartPath" d="M300 520 C 150 420, 40 300, 150 200 C 230 130, 320 170, 300 230 C 280 170, 370 130, 450 200 C 560 300, 450 420, 300 520 Z" />
         <path id="topArc" d="M150 210 C 220 120, 380 120, 450 210" fill="none" />
       </defs>
-      <use href="#heartPath" fill="rgba(255,235,238,0.12)" stroke="rgba(255,255,255,0.06)" stroke-width="2" />
+      <use href="#heartPath" fill="rgba(255,235,238,0.14)" stroke="rgba(255,255,255,0.06)" stroke-width="2" />
       <use href="#heartPath" fill="none" stroke="rgba(255,100,150,0.22)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
       <text font-size="20" font-family="Poppins, Inter, sans-serif" text-anchor="middle" fill="#ffdce4">
         <textPath href="#topArc" startOffset="50%">Chúc mừng Ngày Nhà giáo Việt Nam 20/11</textPath>
       </text>
     </svg>
+
+    <!-- floating decorations -->
+    <div class="floating h1">❤️</div>
+    <div class="floating h2">💖</div>
+    <div class="floating h3">💕</div>
+    <div class="floating b1">📘</div>
+    <div class="floating b2">📕</div>
+    <div class="floating b3">📗</div>
+
   </div>
 
-  <!-- floating hearts & books -->
-  <div class="floating heart h1">❤️</div>
-  <div class="floating heart h2">💖</div>
-  <div class="floating heart h3">💕</div>
-  <div class="floating book b1">📘</div>
-  <div class="floating book b2">📕</div>
-  <div class="floating book b3">📗</div>
+  <!-- modal for showing all messages -->
+  <div class="modal" id="modal">
+    <span class="close" id="modalClose">✖</span>
+    <h3>Danh sách 10 lời chúc</h3>
+    <ol id="allList"></ol>
+  </div>
 
   <script>
-    const content = {
-      heading: 'Kính gửi Thầy Cô!',
-      p1: 'Hôm nay là ngày 20/11, ngày đặc biệt để chúng em gửi lời tri ân đến thầy cô – những người tận tâm dìu dắt chúng em trên con đường tri thức.',
-      p2: 'Cảm ơn thầy cô vì những bài học, những lời khuyên và cả những quan tâm giản dị mỗi ngày.',
-      p3: 'Chúc thầy cô luôn vui vẻ, mạnh khỏe và thật hạnh phúc bên học trò thân yêu của mình.',
-      p4: 'Thầy cô là ngọn đèn soi sáng, là người truyền cảm hứng cho chúng em cố gắng từng ngày.',
-      p5: '❤️ Chúc mừng Ngày Nhà giáo Việt Nam 20/11 ❤️',
-      p6: 'Tập thể lớp 12a2 THPT Cát Tiên kính tặng thầy cô'
-    };
+    // 10 sample messages (mỗi phần là 5 đoạn: heading + 4 parag + footer)
+    const messages = [
+      {
+        title: 'Lời chúc 1',
+        lines: [
+          'Hôm nay là ngày 20/11, ngày đặc biệt để chúng em gửi lời tri ân đến thầy cô – những người tận tâm dìu dắt chúng em trên con đường tri thức.',
+          'Cảm ơn thầy cô vì những bài học, những lời khuyên và cả những quan tâm giản dị mỗi ngày.',
+          'Chúc thầy cô luôn vui vẻ, mạnh khỏe và thật hạnh phúc bên học trò thân yêu của mình.',
+          'Thầy cô là ngọn đèn soi sáng, là người truyền cảm hứng cho chúng em cố gắng từng ngày.'
+        ]
+      },
+      {
+        title: 'Lời chúc 2',
+        lines: [
+          'Thầy/cô là người đã giúp chúng em “nâng cấp tư duy”, khắc phục “lỗi kiến thức” và truyền cho chúng em động lực mỗi ngày.',
+          'Dù đôi lúc chúng em hơi ồn, hơi lười, nhưng thầy/cô vẫn kiên trì như một phiên bản AI không bao giờ mệt mỏi.',
+          'Cảm ơn thầy/cô vì đã cho chúng em nhiều bài học quý giá, cả trên lớp lẫn trong cuộc sống.',
+          'Chúc thầy/cô 20/11 thật nhiều niềm vui, sức khỏe và luôn giữ được “bộ nhớ hạnh phúc đầy ắp”.'
+        ]
+      },
+      {
+        title: 'Lời chúc 3',
+        lines: [
+          'Có lẽ chúng em không nói nhiều, nhưng trong lòng mỗi đứa đều biết ơn thầy/cô vô cùng.',
+          'Từng lời nhắc nhở, từng sự quan tâm thầy/cô dành cho chúng em đều chứa đựng một tình thương rất ấm áp.',
+          'Thầy/cô không chỉ dạy chữ, mà còn chạm đến trái tim của chúng em bằng sự chân thành.',
+          'Nhân ngày Nhà giáo Việt Nam, chúc thầy/cô luôn khỏe mạnh, an yên và được nhận lại thật nhiều yêu thương từ học trò.'
+        ]
+      },
+      {
+        title: 'Lời chúc 4',
+        lines: [
+          'Có những lúc chúng em làm thầy/cô lo lắng, có lúc khiến thầy/cô mệt lòng, vậy mà thầy/cô vẫn luôn dịu dàng ở bên cạnh.',
+          'Thầy/cô kiên nhẫn dạy bảo từng chút một, và chúng em biết ơn vì điều đó.',
+          'Những bài học của thầy/cô không chỉ giúp chúng em giỏi hơn, mà giúp chúng em sống tốt hơn.',
+          'Chúc thầy/cô 20/11 thật hạnh phúc, luôn được bao quanh bởi sự kính trọng và tình thương của học trò.'
+        ]
+      },
+      {
+        title: 'Lời chúc 5',
+        lines: [
+          'Thầy/cô là người đã ở bên chúng em trong những lúc bối rối nhất.',
+          'Thầy/cô nhẹ nhàng chỉ lối và tiếp thêm niềm tin để chúng em bước tiếp.',
+          'Mỗi tiết dạy đều mang theo sự tận tâm và tình thương vô cùng ấm áp.',
+          'Chúc thầy/cô ngày 20/11 thật bình yên, rạng rỡ và ngập tràn niềm vui.'
+        ]
+      },
+      {
+        title: 'Lời chúc 6',
+        lines: [
+          'Chúng em may mắn khi có thầy/cô luôn đồng hành và nâng đỡ bằng tất cả tấm lòng.',
+          'Thầy/cô không chỉ cho chúng em kiến thức, mà còn cho chúng em cảm giác an tâm mỗi khi bước vào lớp.',
+          'Những điều thầy/cô dạy đã chạm vào trái tim chúng em theo cách rất đặc biệt.',
+          'Chúc thầy/cô luôn mạnh khỏe, hạnh phúc và được đón nhận thật nhiều tình cảm chân thành.'
+        ]
+      },
+      {
+        title: 'Lời chúc 7',
+        lines: [
+          'Thầy/cô luôn là người hiểu chúng em ngay cả khi chúng em không kịp nói ra điều mình nghĩ.',
+          'Nhờ sự thấu hiểu và động viên của thầy/cô, chúng em cảm thấy được tiếp thêm sức mạnh mỗi ngày.',
+          'Những gì thầy/cô dành cho chúng em là điều vô cùng trân trọng.',
+          'Chúc thầy/cô 20/11 thật ấm áp, ngập tràn nụ cười và niềm vui.'
+        ]
+      },
+      {
+        title: 'Lời chúc 8',
+        lines: [
+          'Thầy/cô đã cho chúng em hơn cả kiến thức – đó là niềm tin và động lực mỗi khi vấp ngã.',
+          'Có những lời dạy đến sau này lớn lên chúng em mới thật sự hiểu.',
+          'Cảm ơn thầy/cô vì đã nhìn thấy điều tốt đẹp trong chúng em ngay cả khi chính chúng em chưa thấy.',
+          'Chúc thầy/cô luôn mạnh khỏe và có thật nhiều niềm vui trên hành trình gieo yêu thương.'
+        ]
+      }
+    ];
 
-    const cfg = {charDelay:30, paragraphDelay:500};
+    // populate select and modal list
+    const pick = document.getElementById('pick');
+    const allList = document.getElementById('allList');
+    messages.forEach((m, idx) => {
+      const opt = document.createElement('option'); opt.value = idx; opt.text = m.title; pick.appendChild(opt);
+      const li = document.createElement('li'); li.innerText = m.title + ' — ' + m.lines.join(' '); allList.appendChild(li);
+    });
+
+    // DOM refs for typing
+    const ids = ['heading','p1','p2','p3','p4','p5'];
+    const cfg = {charDelay: 28, paragraphDelay: 420};
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if(prefersReduced){
-      Object.keys(content).forEach(id => document.getElementById(id).innerText = content[id]);
-    } else {
-      function typeInto(el,text,delay){
-        return new Promise(resolve=>{
-          let i=0;
-          function step(){ if(i<=text.length){ el.innerText=text.slice(0,i); i++; setTimeout(step,delay); } else resolve(); }
-          step();
-        });
+    function showMessageByIndex(i){
+      const msg = messages[i];
+      const content = {
+        heading: msg.title,
+        p1: msg.lines[0]||'', p2: msg.lines[1]||'', p3: msg.lines[2]||'', p4: msg.lines[3]||'', p5: '❤️ Chúc mừng Ngày Nhà giáo Việt Nam 20/11 ❤️'
+      };
+      if(prefersReduced){
+        ids.forEach(k=>document.getElementById(k).innerText = content[k]);
+        // hide cursors
+        document.querySelectorAll('.cursor').forEach(c=>c.style.visibility='hidden');
+      } else {
+        // clear first
+        ids.forEach(k=>document.getElementById(k).innerText = '');
+        document.querySelectorAll('.cursor').forEach(c=>c.style.visibility='visible');
+        // type sequentially
+        (async function(){
+          for(let idx=0; idx<ids.length; idx++){
+            const el = document.getElementById(ids[idx]);
+            const text = content[ids[idx]] || '';
+            await typeInto(el, text, cfg.charDelay);
+            const cur = (idx===0)?document.getElementById('cursor-h'):document.getElementById('c'+idx);
+            if(cur){ await new Promise(r=>setTimeout(r,120)); cur.style.visibility='hidden'; }
+            if(idx>0) await new Promise(r=>setTimeout(r,cfg.paragraphDelay));
+          }
+        })();
       }
-
-      (async function(){
-        const ids=['heading','p1','p2','p3','p4','p5','p6'];
-        for(let k=0;k<ids.length;k++){
-          const el=document.getElementById(ids[k]);
-          const cursor=document.getElementById((k===0)?'cursor-h':'c'+k);
-          if(cursor) cursor.style.visibility='visible';
-          await typeInto(el,content[ids[k]],cfg.charDelay);
-          if(cursor){ await new Promise(r=>setTimeout(r,120)); cursor.style.visibility='hidden'; }
-          if(k>0) await new Promise(r=>setTimeout(r,cfg.paragraphDelay));
-        }
-      })();
     }
 
-    const colors=['#ff6b81','#ff9aa2','#ff4d6d','#ffd1dc'];
-    function spawn(){
-      const el=document.createElement('div');
-      el.className='float-heart';
-      el.innerText='💐';
-      el.style.left=(30+Math.random()*40)+'%';
-      el.style.bottom=(10+Math.random()*6)+'%';
-      el.style.fontSize=(12+Math.random()*24)+'px';
-      el.style.opacity=0.9;
-      el.style.color=colors[Math.floor(Math.random()*colors.length)];
-      el.style.animationDuration=(3+Math.random()*3)+'s';
-      document.body.appendChild(el);
-      setTimeout(()=>el.remove(),7000);
+    function typeInto(el, text, delay){
+      return new Promise(resolve => {
+        let i=0; function step(){ if(i<=text.length){ el.innerText = text.slice(0,i); i++; setTimeout(step, delay);} else resolve(); } step();
+      });
     }
-    if(!prefersReduced) setInterval(spawn,520);
+
+    // random on load
+    function randomPick(){ const idx = Math.floor(Math.random()*messages.length); pick.value = idx; showMessageByIndex(idx); }
+    document.getElementById('randomBtn').addEventListener('click', randomPick);
+    pick.addEventListener('change', ()=> showMessageByIndex(parseInt(pick.value,10)));
+
+    // modal
+    const modal = document.getElementById('modal');
+    document.getElementById('showAllBtn').addEventListener('click', ()=> modal.style.display='block');
+    document.getElementById('modalClose').addEventListener('click', ()=> modal.style.display='none');
+    window.addEventListener('click', e=> { if(e.target === modal) modal.style.display='none'; });
+
+    // init
+    randomPick();
+
+    // EFFECT MAPPING
+const effectMap = {
+  1: ['A','E'],
+  2: ['B','C'],
+  3: ['D','F'],
+  4: ['A','F'],
+  5: ['D','B'],
+  6: ['A','B'],
+  7: ['B','F'],
+  8: ['F','E']
+};
+
+// floating decorations
+    function spawnFloating(){ /* already handled via CSS animated divs */ }
   </script>
 </body>
 </html>
